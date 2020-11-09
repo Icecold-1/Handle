@@ -10,5 +10,5 @@ services:
       - 2641:2641/tcp
       - 2641:2641/udp
       - 8000:8000
-    depends on:
+    depends_on:
       -db
