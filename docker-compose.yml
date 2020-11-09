@@ -1,0 +1,14 @@
+version: "1.0"
+services:
+  db:
+    build: ./postgres
+    ports:
+      -"5432:5432"
+  handle:
+    build: ./handle
+    ports:
+      -"2641:2641/tcp"
+      -"2641:2641/udp"
+      -"8000:8000"
+    depends on:
+      -db
