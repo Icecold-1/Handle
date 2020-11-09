@@ -11,4 +11,4 @@ services:
       - 2641:2641/udp
       - 8000:8000
     depends_on:
-      -db
+      - db
