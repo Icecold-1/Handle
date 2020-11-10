@@ -8,6 +8,6 @@ COPY /init-handle-db.sh /db-create.sql /
 
 RUN chmod +x db-create.sql init-handle-db.sh /
 
-RUN psql -U $HANDLE_ACCOUNT_ADMIN -h 127.0.0.1 -d $HANDLE_DATABASE_NAME -f db-create.sql
+RUN psql -U $HANDLE_ACCOUNT_ADMIN -d $HANDLE_DATABASE_NAME -f db-create.sql
 
 RUN echo "DATABASE CREATED SUCCESSFULLY"
