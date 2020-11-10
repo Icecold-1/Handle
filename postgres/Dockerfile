@@ -6,6 +6,8 @@ ENV HANDLE_ACCOUNT_ADMIN=handle_admin
 ENV HANDLE_ACCOUNT_PASSW=4neCap2tpVctsVpv
 ENV HANDLE_DATABASE_NAME=handle
 
+COPY postgres-entrypoint.sh /
+
 COPY init-handle-db.sh db-create.sql /docker-entrypoint-initdb.d
 
 RUN echo "DATABASE CREATED SUCCESSFULLY"
