@@ -1,18 +1,21 @@
-FROM ubuntu:18.04
+FROM postgres:13.0
 
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+RUN if [ ! -d /docker-entrypoint-initdb.d ]; then mkdir /docker-entrypoint-initdb.d; fi
 
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+ENV HANDLE_ACCOUNT_ADMIN=handle_admin
+ENV HANDLE_ACCOUNT_PASSW=4neCap2tpVctsVpv
+ENV HANDLE_DATABASE_NAME=handle
 
-RUN apt-get update && apt-get install -y python-software-properties software-properties-common postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3
+COPY init-handle-db.sh /docker-entrypoint-initdb.d
 
-USER postgres
+COPY db-create.sql /docker-entrypoint-initdb.d
 
-RUN psql --command "CREATE USER handle_admin WITH PASSWORD '4neCap2tpVctsVpv'"
+WORKDIR /docker-entrypoint-initdb.d
 
-RUN psql --command createdb -O handle_admin -E unicode handle
+RUN chmod +x /db-create.sql /init-handle-db.sh
 
-COPY db-create.sql /
+RUN ./init-handle-db.sh
 
-RUN psql --command -U handle_admin -d handle -a -q /db-create.sql
+RUN psql -U $HANDLE_ACCOUNT_ADMIN -h 127.0.0.1 -d $HANDLE_DATABASE_NAME -f db-create.sql
 
+RUN echo "DATABASE CREATED SUCCESSFULLY"
