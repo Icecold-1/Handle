@@ -12,5 +12,5 @@ COPY init-handle-db.sh db-create.sql /docker-entrypoint-initdb.d
 
 RUN echo "DATABASE CREATED SUCCESSFULLY"
 
-ENTRYPOINT["/postgres-entrypoint.sh"]
-CMD["postgres"]
+ENTRYPOINT ["/postgres-entrypoint.sh"]
+CMD ["postgres"]
