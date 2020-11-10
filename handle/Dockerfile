@@ -16,7 +16,9 @@ RUN tar zxvf hdl-9.3.tar.gz
 ## RUN wget https://ftp.postgresql.org/pub/odbc/versions/src/psqlodbc-12.01.0000.tar.gz
 ## RUN tar xvfz psqlodbc-12.01.0000.tar.gz
 
-RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar -P /handle-server/hdl-9.3/lib/
+RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
+
+COPY /postgresql-42.2.18.jar /handle-server/hdl-9.3/lib/
 
 RUN mkdir /etc/hdl_svr
 
