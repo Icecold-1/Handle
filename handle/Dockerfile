@@ -6,9 +6,6 @@ EXPOSE 2461/tcp
 EXPOSE 2461/udp
 EXPOSE 8000/tcp
 
-RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install -y wget curl nano python3
-RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /handle-server
 
 WORKDIR /handle-server
