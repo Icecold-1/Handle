@@ -12,7 +12,7 @@ COPY db-create.sql /docker-entrypoint-initdb.d
 
 WORKDIR /docker-entrypoint-initdb.d
 
-RUN chmod +x /db-create.sql /init-handle-db.sh
+RUN chmod +x db-create.sql init-handle-db.sh
 
 RUN ./init-handle-db.sh
 
