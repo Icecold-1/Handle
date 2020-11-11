@@ -1,6 +1,4 @@
-create table handles (
-	create table nas (na raw(512)
-);
+create table nas (na raw(512));
 
 create table handles (
 	handle raw(512),
