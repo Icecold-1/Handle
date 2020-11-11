@@ -24,4 +24,4 @@ COPY genrsp.sh config.dct auto-complete.sh /
 
 RUN chmod +x /auto-complete.sh
 
-COPY config.dct /hdl_svr
+##COPY config.dct /hdl_svr
