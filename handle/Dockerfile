@@ -20,8 +20,10 @@ RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
 
 WORKDIR /handle-server/hdl-9.3/bin
 
-COPY genrsp.sh config.dct auto-complete.sh /
+COPY genrsp.sh config.dct auto-complete.sh entry-point.sh /
 
 RUN chmod +x /auto-complete.sh
+
+RUN chmod +x /entry-point.sh
 
 ##COPY config.dct /hdl_svr
