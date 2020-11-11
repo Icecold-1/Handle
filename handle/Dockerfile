@@ -20,11 +20,8 @@ RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
 
 WORKDIR /handle-server/hdl-9.3/bin
 
-COPY genrsp.sh config.dct /
+COPY genrsp.sh config.dct auto-complete.sh /
 
-RUN touch response.txt
-
-RUN chmod +x /genrsp.sh response.txt
-RUN cat /response.txt | ./hdl-setup-server /hdl_svr
+RUN chmod +x /auto-complete.sh
 
 COPY config.dct /hdl_svr
