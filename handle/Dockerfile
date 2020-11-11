@@ -7,6 +7,7 @@ EXPOSE 2461/udp
 EXPOSE 8000/tcp
 
 RUN mkdir /handle-server
+RUN mkdir /hdl_svr
 
 WORKDIR /handle-server
 
@@ -17,13 +18,11 @@ WORKDIR /handle-server/hdl-9.3/lib
 
 RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
 
-RUN mkdir /etc/hdl_svr
-
 WORKDIR /handle-server/hdl-9.3/bin
 
 COPY genrsp.sh config.dct /
 
-RUN ./genrsp.sh /response.txt
-RUN cat /response.txt | ./hdl-setup-server
+RUN chmod +x /genrsp.sh response.txt
+RUN cat /response.txt | ./hdl-setup-server /hdl_svr
 
-COPY config.dct /etc/hdl_svr/
+COPY config.dct /hdl_svr
