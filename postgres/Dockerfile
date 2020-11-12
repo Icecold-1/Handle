@@ -8,7 +8,7 @@ ENV HANDLE_DATABASE_NAME=handle
 
 COPY postgres-entrypoint.sh /
 
-COPY db-create.sql /docker-entrypoint-initdb.d
+## COPY db-create.sql /docker-entrypoint-initdb.d
 
 COPY init-handle-db.sh /docker-entrypoint.initdb.d
 
