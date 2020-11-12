@@ -24,6 +24,6 @@ COPY genrsp.sh config.dct auto-complete.sh entry-point.sh /
 
 RUN chmod +x /auto-complete.sh
 
-RUN chmod +x /entry-point.sh
-
 ##COPY config.dct /hdl_svr
+
+ENTRYPOINT ["entry-point.sh"]
