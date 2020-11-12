@@ -28,6 +28,8 @@ RUN chmod +x /auto-complete.sh
 
 ##COPY config.dct /hdl_svr
 
+WORKDIR /
+
 RUN chmod +x ./entry-point.sh
 
 ENTRYPOINT ["/entry-point.sh"]
