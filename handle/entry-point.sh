@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sleep infinity
+while true; do sleep 10000; done
