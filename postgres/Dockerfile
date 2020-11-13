@@ -10,4 +10,4 @@ COPY init-handle-db.sh init-handle-tables.sh /docker-entrypoint.initdb.d/
 
 WORKDIR /docker-entrypoint.initdb.d
 
-RUN chmod +x /init-handle-db.sh /init-handle-tables.sh
+RUN chmod +x init-handle-db.sh init-handle-tables.sh
