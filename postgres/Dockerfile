@@ -10,7 +10,7 @@ COPY postgres-entrypoint.sh /
 
 ## COPY db-create.sql /docker-entrypoint-initdb.d
 
-COPY init-handle-db.sh init-handle-tables.sh /docker-entrypoint.initdb.d
+COPY init-handle-db.sh init-handle-tables.sh /docker-entrypoint.initdb.d/
 
 ##ENTRYPOINT ["/postgres-entrypoint.sh"]
 ##CMD ["postgres"]
