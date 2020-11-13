@@ -2,9 +2,9 @@ FROM postgres:13.0
 
 RUN if [ ! -d /docker-entrypoint-initdb.d ]; then mkdir /docker-entrypoint-initdb.d; fi
 
-ENV HANDLE_DBNAME=handle_db
-ENV HANDLE_DBUSER=handle_admin
-ENV HANDLE_DBPASS='4neCap2tpVctsVpv'
+ENV POSTGRES_DBNAME=handle_db
+ENV POSTGRES_DBUSER=handle_admin
+ENV POSTGRES_DBPASS='4neCap2tpVctsVpv'
 
 COPY postgres-entrypoint.sh /
 
