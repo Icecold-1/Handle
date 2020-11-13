@@ -8,6 +8,4 @@ ENV POSTGRES_DBPASS='4neCap2tpVctsVpv'
 
 COPY init-handle-db.sh init-handle-tables.sh /docker-entrypoint.initdb.d/
 
-WORKDIR /docker-entrypoint.initdb.d
-
-RUN chmod +x init-handle-db.sh init-handle-tables.sh
+RUN chmod 0775 /docker-entrypoint.initdb.d/init-handle-db.sh /docker-entrypoint.initdb.d/init-handle-tables.sh
