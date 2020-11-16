@@ -23,9 +23,9 @@ WORKDIR /handle-server/handle-9.3.0/lib
 
 RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
 
-COPY genrsp.sh config.dct auto-complete.sh /handle-server/handle-9.3.0/lib/
+COPY genrsp.sh config.dct auto-complete.sh /handle-server/handle-9.3.0/bin/
 
-RUN chmod +x /handle-server/handle-9.3.0/lib/auto-complete.sh /handle-server/handle-9.3.0/lib/genrsp.sh
+RUN chmod +x /handle-server/handle-9.3.0/bin/auto-complete.sh /handle-server/handle-9.3.0/bin/genrsp.sh
 
 RUN ./auto-complete.sh
 
