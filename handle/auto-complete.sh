@@ -2,6 +2,8 @@
 
 echo "generating responses..."
 
-/handle-server/handle-9.3.0/bin/genrsp.sh /response.txt
+cd /handle-server/handle-9.3.0/bin/
 
-#cat /response.txt | hdl-setup-server /hdl_svr
+/genrsp.sh /response.txt
+
+cat /response.txt | ./hdl-setup-server /hdl_svr
