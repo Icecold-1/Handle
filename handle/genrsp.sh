@@ -14,7 +14,7 @@ echo "1" >> $RESPFILE								#version/serial number
 echo "OpenScience handle" >> $RESPFILE				#short description
 echo "FERI" >> $RESPFILE							#org name
 echo "Tomaz Kramberger" >> $RESPFILE				#name of contact
-echo "none" >> $RESPFILE							#phone number of contact
+echo "" >> $RESPFILE								#phone number of contact
 echo "tomaz.kramberger3@um.si" >> $RESPFILE			#email of contact
 echo "n" >> $RESPFILE								#disable udp
 echo "y" >> $RESPFILE								#encrypt private key server certification
