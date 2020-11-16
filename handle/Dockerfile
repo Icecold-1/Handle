@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Tomaz Kramberger <tomaz.kramberger3@um.si>
 
-RUN apt-get update -y && apt-get upgrade
+RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y openjdk-11-jre-headless nano wget python3
 
 EXPOSE 2461/tcp
