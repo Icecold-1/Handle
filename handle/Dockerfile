@@ -25,7 +25,7 @@ RUN wget https://jdbc.postgresql.org/download/postgresql-42.2.18.jar
 
 COPY genrsp.sh config.dct auto-complete.sh /handle-server/handle-9.3.0/lib/
 
-RUN chmod +x /auto-complete.sh /genrsp.sh
+RUN chmod +x /handle-server/handle-9.3.0/lib/auto-complete.sh /handle-server/handle-9.3.0/lib/genrsp.sh
 
 RUN ./auto-complete.sh
 
