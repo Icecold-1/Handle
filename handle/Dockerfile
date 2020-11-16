@@ -27,6 +27,8 @@ COPY genrsp.sh config.dct auto-complete.sh /handle-server/handle-9.3.0/bin/
 
 RUN chmod +x /handle-server/handle-9.3.0/bin/auto-complete.sh /handle-server/handle-9.3.0/bin/genrsp.sh
 
+WORKDIR /handle-server/handle-9.3.0/bin
+
 RUN ./auto-complete.sh
 
 ##COPY config.dct /hdl_svr
