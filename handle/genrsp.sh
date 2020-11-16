@@ -9,7 +9,7 @@ echo "lhrs1.hpc-rivr.um.si"	>> $RESPFILE			#if ip is different, type in to bind
 echo "2641"	>> $RESPFILE							#port number for server to listen to
 echo "8000" >> $RESPFILE							#port number of http interface
 echo "y" >> $RESPFILE								#log accesses
-echo "Monthly" >> $RESPFILE							#frequency of logging accesses
+echo "M" >> $RESPFILE								#frequency of logging accesses
 echo "1" >> $RESPFILE								#version/serial number
 echo "OpenScience handle" >> $RESPFILE				#short description
 echo "FERI" >> $RESPFILE							#org name
