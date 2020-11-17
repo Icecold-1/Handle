@@ -6,6 +6,8 @@ services:
       - 5432:5432
     environment:
      POSTGRES_HOST_AUTH_METHOD: trust
+    volume:
+      - psql-data:/var/lib/postgresql/data
   handle:
     build: ./handle
     ports:
@@ -14,3 +16,7 @@ services:
       - 8000:8000
     depends_on:
       - db
+
+volumes:
+  psql-data:
+    driver: local
