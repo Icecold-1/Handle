@@ -6,7 +6,7 @@ services:
       - 5432:5432
     environment:
      POSTGRES_HOST_AUTH_METHOD: trust
-    volume:
+    volumes:
       - psql-data:/var/lib/postgresql/data
   handle:
     build: ./handle
